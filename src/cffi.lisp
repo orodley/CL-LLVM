@@ -81,6 +81,8 @@
                ,foreign-name)
          ,return-type ,@arguments)))
 
+(push "/usr/lib/llvm-3.5/lib/" cffi:*foreign-library-directories*)
+
 (define-foreign-library libllvm
   (:darwin (:or (:default "libLLVM")
                 (:default "libLLVM-3.1")
@@ -89,7 +91,8 @@
   (:unix (:or "libLLVM.so" "libLLVM.so.1"
               "libLLVM-3.1.so" "libLLVM-3.1.so.1"
               "libLLVM-3.1svn.so" "libLLVM-3.1svn.so.1"
-              "libLLVM-3.0.so" "libLLVM-3.0.so.1"))
+              "libLLVM-3.0.so" "libLLVM-3.0.so.1"
+              "libLLVM-3.5.so"))
   (t (:or (:default "libLLVM")
           (:default "libLLVM-3.1")
           (:default "libLLVM-3.1svn")

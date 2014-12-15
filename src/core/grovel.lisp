@@ -1,7 +1,8 @@
 (in-package :llvm)
 
 (cc-flags "-D__STDC_LIMIT_MACROS"
-          "-D__STDC_CONSTANT_MACROS")
+          "-D__STDC_CONSTANT_MACROS"
+          "-I/usr/lib/llvm-3.5/include")
 (include "llvm-c/Core.h")
 
 (cenum opcode
